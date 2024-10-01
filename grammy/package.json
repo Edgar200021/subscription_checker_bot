@@ -1,0 +1,31 @@
+{
+  "name": "tg_bot",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "rm -rf dist && npm run build && pm2 start dist/main.js && pm2 logs main",
+    "start:prod": "pm2 start dist/main.js",
+    "stop": "pm2 stop main",
+    "flush": "pm2 flush main",
+    "log": "pm2 logs main",
+    "restart": "pm2 restart main",
+    "monit": "pm2 monit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@grammyjs/auto-retry": "^2.0.2",
+    "@grammyjs/runner": "^2.0.3",
+    "better-sqlite3": "^11.3.0",
+    "dotenv": "^16.4.5",
+    "grammy": "^1.29.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/node": "^22.5.4",
+    "typescript": "^5.5.4"
+  }
+}
